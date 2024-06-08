@@ -16,7 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from backend_api.views import all_products
+from backend_api.views import wood_list
+from backend_api.views import lighting_list
+from backend_api.views import appliance_list
+from backend_api.views import paint_list
+from backend_api.views import landscaping_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('all-products/', all_products, name='all-products'),
+    path('appliances/', appliance_list, name='appliance-list'),
+    path('lightings/', lighting_list, name='lighting-list'),
+    path('woods/', wood_list, name='wood-list'),
+    path('landscapings/', landscaping_list, name='landscaping-list'),
+    path('paints/', paint_list, name='paint-list'),
 ]
